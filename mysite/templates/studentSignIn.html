@@ -1,0 +1,36 @@
+<!--studentSignIn.html-->
+{% extends "base.html" %}
+
+{% block title %}
+student sign in
+{% endblock %}
+
+{% block content %}
+	<h1>Welcome student!</h1>
+	<p>Your classroom ID is {{ClassroomId}}</p>
+
+	{%if SignInName%}
+
+		<p>{{SignInName}} signed in!</p>
+
+	{%else%}
+
+		<p>Please sign in!</p>
+
+	{% endif %}
+
+	{% if SplitNameList %} 
+		<form method="POST">
+			{% csrf_token %}
+			{% for element in SplitNameList %}
+				<input type="radio" id="attendance{{forloop.counter}}" name="attendance" value="{{element}}">
+				<label for="attendance{{forloop.counter}}">{{forloop.counter}}. {{element}}</label><br>
+			{% endfor %}
+			<div>
+    				<button type="submit">Submit</button>
+			</div>
+		</form> 
+	{% endif %}
+
+{% endblock %}
+

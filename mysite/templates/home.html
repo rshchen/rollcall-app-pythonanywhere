@@ -1,0 +1,17 @@
+<!-- home.html -->
+{% extends "base.html" %}
+
+{% block title %}
+home page
+{% endblock %}
+
+{% block content %}
+	<h1>Welcome!</h1>
+	<p>Hello, {{user.socialaccount_set.all.0.get_provider_account}}!</p>
+
+	<div class="buttons">
+		<a href="{% url 'teacher' %}" class="btn btn-primary">Teacher</a>
+		<a href="{% url 'student' %}" class="btn btn-secondary">Student</a>
+	</div>
+{% endblock %}
+

@@ -1,0 +1,44 @@
+<!--attendanceList.html-->
+{% extends "base.html" %}
+
+{% block title %}
+attendance list
+{% endblock %}
+
+{% block content %}
+
+	<h1>Welcome teacher!</h1>
+	<p>Your classroom ID is {{ClassroomId}}.<br>
+	Please send the ID to your students.
+	</p>
+
+	<div >
+	<table border="1" class="database">
+		<thead class="thead-dark">
+			<tr>
+				<th> number </th>
+				<th> name </th>
+				<th> attendance </th>
+				<th> account </th>
+			</tr>
+		</thead>
+		<tbody>
+			{% if RollCallList %}  
+				{% for x,y,z in RollCallList %}
+					<tr>
+						<td> {{forloop.counter}} </td>
+						<td> {{x}} </td>
+						<td> {{y}} </td>
+						<td> {{z}} </td>
+						
+					</tr>
+				{% endfor %}
+			{% endif %}
+		</tbody>
+	</table>
+	</div>
+
+	<button onclick="location.reload();">roll call</button>
+
+
+{% endblock %}

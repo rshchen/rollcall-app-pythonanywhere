@@ -1,0 +1,51 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<!--base.html-->
+<!DOCTYPE html>
+{% load socialaccount %}
+{% load static %}
+<html>
+<head>
+	<title>
+		{% block title %}
+		{% endblock %}
+	</title> 
+	<link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+	{% if user.is_authenticated %}
+  	
+  		{% block content %}
+  		{% endblock %}
+  		<div>
+  			<ul>
+  				<li><a href="{% url 'home' %}">home page</a></li>
+  				<li><a href="{% url 'account_logout' %}">Logout</a></li>
+  			</ul>
+  		</div>
+  		
+  	
+	{% else %}
+	
+		<div>
+			<h1>Welcome!</h1>
+			<p>This is an app for roll calling.</p>
+			<p>Please log in with google account.</p>
+			<ul>
+				<li><a href="{% provider_login_url 'google' %}">log in</a></li>
+			</ul>
+		</div>
+	{% endif %}	  
+</body>
+</html>

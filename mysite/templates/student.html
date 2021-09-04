@@ -1,0 +1,19 @@
+<!--student.html-->
+{% extends "base.html" %}
+
+{% block title %}
+student
+{% endblock %}
+
+{% block content %}
+	<h1>Welcome student!</h1>
+	<p>Please enter the classroom ID given by your teacher.</p>
+
+	<form action="" method="POST">
+		{% csrf_token %}           
+		{{ form }}
+		<input class="btn btn-success" type="submit" value="submit" />   
+	</form>
+
+{% endblock %}
+

@@ -1,0 +1,43 @@
+<!--teacher.html-->
+{% extends "base.html" %}
+
+{% block title %}
+	teacher
+{% endblock %}
+
+{% block content %}
+	<h1>Welcome teacher!</h1>
+	<p>Please enter your name list of students seperated by line breaks.<br>
+	(<b>tip</b>: You can copy and paste the name list from excel directly.)
+	</p>
+	<form action="" method="POST">
+		{% csrf_token %}           
+		{{ form }}
+		<input class="btn btn-success" type="submit" value="submit" />   
+	</form>
+
+{% if SplitNameList %}
+	<div>
+		<p>Please check the name list below.</p>
+		<table border="1" class="database">
+			<thead class="thead-dark">
+				<tr>
+					<th> number </th>
+					<th> name </th>
+				</tr>
+			</thead>
+			<tbody> 
+				{% for element in SplitNameList %}
+					<tr>
+						<td> {{forloop.counter}} </td>
+						<td> {{element}} </td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		<a href="{% url 'attendanceList' ClassroomId=ClassroomId %}" class="btn btn-success" style='margin:5px;'> Check </a>
+	</div>
+{% endif %}
+
+{% endblock %}
+
