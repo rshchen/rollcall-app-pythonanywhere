@@ -13,7 +13,7 @@ db.sqlite3
 rollcall_venv/
 venv/
 
-local_settings
+#local_settings
 #production_settings
 Procfile
 requirements
