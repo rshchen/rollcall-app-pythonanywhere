@@ -5,6 +5,10 @@
 home page
 {% endblock %}
 
+{% block extra_head %}
+<meta name="google-site-verification" content="SrA6IrB0qKFXMf-NJhiN_F1C-kSvWziBUAkKoUhMsMU" />
+{% endblock %}
+
 {% block content %}
 	<h1>Welcome!</h1>
 	<p>Hello, {{user.socialaccount_set.all.0.get_provider_account}}!</p>

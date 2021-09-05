@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-=0-h0w--6bs!pkghp424vx$)e1w9gdjcp3%y7g9wb=rwf($nii
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.pythonanywhere.com','127.0.0.1']
+ALLOWED_HOSTS = ['.pythonanywhere.com']
 
 
 # Application definition
@@ -160,5 +160,6 @@ LOGIN_REDIRECT_URL = '/'
 #LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_LOGOUT_ON_GET = True
 
-
+# Honor the 'X-Forwarded-Proto' header for request.is_secure().
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 	

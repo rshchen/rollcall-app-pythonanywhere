@@ -21,6 +21,8 @@
 		{% block title %}
 		{% endblock %}
 	</title> 
+	{% block extra_head %}
+    	{% endblock %}
 	<link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
@@ -40,10 +42,13 @@
 	
 		<div>
 			<h1>Welcome!</h1>
-			<p>This is an app for roll calling.</p>
-			<p>Please log in with google account.</p>
+			<p>This is an app for roll calling.<br>
+			Please log in with google account.<br>
+			If you are interested in the source code, please visit 
+			<a href="https://github.com/rshchen/rollcall-app-pythonanywhere.git">https://github.com/rshchen/rollcall-app-pythonanywhere.git</a>
+			</p>
 			<ul>
-				<li><a href="{% provider_login_url 'google' %}">log in</a></li>
+				<li><a href="{% provider_login_url 'google' %}">login</a></li>
 			</ul>
 		</div>
 	{% endif %}	  
