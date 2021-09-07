@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-=0-h0w--6bs!pkghp424vx$)e1w9gdjcp3%y7g9wb=rwf($nii
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.pythonanywhere.com']
+ALLOWED_HOSTS = ['.pythonanywhere.com','127.0.0.1'] #'127.0.0.1'
 
 
 # Application definition
@@ -154,7 +154,7 @@ AUTHENTICATION_BACKENDS = [
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
-SITE_ID = 3
+SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
 #LOGOUT_REDIRECT_URL = '/'
